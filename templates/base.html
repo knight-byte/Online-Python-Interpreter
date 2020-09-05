@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Python Compiler</title>
+		<link href="{% static 'css/base.css' %}" rel="stylesheet">
+		{% block headcontent %}
+		{% endblock headcontent %}
+	</head>
+	<body>
+		<!-- main container-->
+		<div clas="container">
+			<!-- Navigation -->
+			<div class="nav">
+				<div class="nav-left">
+					<img src="{% static 'images/logo.jpg' %}" alt="logo">
+					<a href="{% url 'home' %}" >HOME</a>
+					<a href="{% url 'compile' %}">COMPILE</a>
+				</div>
+				<div class="nav-right">
+					<div class="login">
+						<a href="">Login</a>
+					</div>
+					<div class="myacc">
+						<a href="">Sign up</a>
+					</div>
+				</div>
+				
+			</div>
+			{% block content %}
+			{% endblock content %}
+		</div>
+		
+		<div class="site-footer">
+			<div class="bottom-footer">
+				<div class="container">
+					<div class="colophon">	 &copy 2020  Abunachar and Bhaskar All rights reserved.</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block headcontent %}
+	<link href="{% static 'css/home.css' %}" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css2?family=Montserrat&display=swap' rel="stylesheet">
+{% endblock headcontent %}
+{% block content %}
+	<div class="downbox">
+		<div class="right-box">
+			
+			<h1 class="txtbold">Online Python</h1>
+			<h1 class="normal">Compiler</h1>
+			<div class="textcon">
+				<p>“The joy of coding Python should be in seeing short, concise, readable classes that express a lot of action in a small amount of clear code -- not in reams of trivial code that bores the reader to death.”<br> ~ Guido van Rossum</p>
+			</div>
+			<div class="getstart">
+				<a href="{% url 'compile' %}">Get Started</a>
+			</div>
+		</div>
+		<div class="left-box">
+			<img src="{% static 'images/home.png' %}" alt="image">
+		</div>
+	</div>
+	<div cl
+	{% endblock content %}
