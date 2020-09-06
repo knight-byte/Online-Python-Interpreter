@@ -1,1 +1,1 @@
-web: gunicorn PCompiler.wsgi --log-file
+web: gunicorn PCompiler.wsgi --log-file -
