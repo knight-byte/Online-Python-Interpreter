@@ -42,13 +42,31 @@ padding: 11px 15px 11px 15px;
 font-weight: lighter;
 
 }
-.left-box img{
-  width:1080px;
-  padding-bottom: 30px;
-
-}
 .right-box h1{
 font-size: 60px;
 font-family: 'Montserrat', sans-serif;
 text-align: center;
+}
+.slides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.fade {
+  animation-name: faded;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes faded {
+  from {opacity: .2} 
+  to {opacity: 1}
 }
