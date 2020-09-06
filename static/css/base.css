@@ -10,22 +10,18 @@ justify-content: space-between;
 
 .nav a{
 text-decoration: none;
-font-size: 20px;
-padding: 15px;
+font-size: 27px;
+padding: 15px 15px 0px 15px;
+font-family: 'Orbitron', sans-serif;
 }
 
 .nav-right,.nav-left{
-padding: 40px 30px 0px 30px;
+padding: 30px 30px 0px 30px;
 
 }
 .nav-right{
 display: flex;
-padding-left: 40px;
-}
-
-.nav-right{
-padding-left: 100px; 
-
+padding-left: 50px;
 }
 
 .nav-left a:hover{
@@ -33,9 +29,13 @@ text-decoration: underline;
 }
 
 .nav-left img{
-	width: 50px;
+	width: 60px;
+	height: 50px;
+	padding-right: 25px;
 }
-
+.nav-left a{
+	padding-left: 30px;
+}
 .login{
 padding: 6px 10px 6px 10px;
 border: 3px solid rgb(79, 4, 255);
