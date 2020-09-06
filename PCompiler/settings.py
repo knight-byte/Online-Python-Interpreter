@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=cu@-$1#op5-y9(xz5+21vensd8+u3$sqqzthh9m&p#l2&u@^2^1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -128,7 +128,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
