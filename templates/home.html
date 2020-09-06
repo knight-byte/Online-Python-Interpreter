@@ -17,9 +17,22 @@
 				<a href="{% url 'compile' %}">Get Started</a>
 			</div>
 		</div>
-		<div class="left-box">
-			<img src="{% static 'images/home.png' %}" alt="image">
+		<div class="slideshow-container">
+			<div class="slides fade">
+				<img src="{% static 'images/slide1.png' %}" style="width:100%">
+			</div>
+			<div class="slides fade">
+				<img src="{% static 'images/slide2.png' %}" style="width:100%">
+			</div>
+			<div class="slides fade">
+				<img src="{% static 'images/slide3.png' %}" style="width:100%">
+			</div>
 		</div>
+		<br>
 	</div>
-	<div cl
-	{% endblock content %}
+</div>
+<div>
+	<script src="{% static 'js/homeSlide.js' %}"></script>
+	
+	
+{% endblock content %}
