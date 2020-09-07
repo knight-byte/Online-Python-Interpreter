@@ -53,13 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-<<<<<<< HEAD
     'django.middleware.security.SecurityMiddleware',
-
-=======
-    'whitenoise.middleware.WhiteNoiseMiddleware',
->>>>>>> c2f4f5e9c0527c91e28c55f9ecfeff05e4d94492
-
 ]
 
 ROOT_URLCONF = 'PCompiler.urls'
