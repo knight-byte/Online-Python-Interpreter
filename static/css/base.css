@@ -1,6 +1,9 @@
 .container{
 display: flex;
-padding-bottom:0px; 
+/*padding-bottom:0px;
+ */
+ /*margin: 0px;*/
+ padding: 0px;
 }
 
 .nav{
@@ -27,11 +30,14 @@ padding-left: 50px;
 .nav-left a:hover{
 text-decoration: underline;
 }
+.nav-left a:visited{
+	color: rgb(111, 59, 231);
+}
 
 .nav-left img{
 	width: 60px;
 	height: 50px;
-	padding-right: 25px;
+	padding-right: 20px;
 }
 .nav-left a{
 	padding-left: 30px;
@@ -49,6 +55,7 @@ margin-right: 20px;
 .login a:hover{
 color: white;
 }
+
 
 .myacc{
 padding: 6px 10px 6px 10px;
@@ -75,6 +82,7 @@ padding-top: 80px;
 
 .site-footer .bottom-footer {
 background-color: #4a4c4e;
+text-align: center;
 
 padding: 20px 30px 30px 30px;
 font-size: 14px;
@@ -85,4 +93,5 @@ font-size: 0.875em;
 
 .site-footer .colophon {
 color: #898b8d;
+text-align: center;
 }
