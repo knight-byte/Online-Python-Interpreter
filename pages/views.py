@@ -9,3 +9,7 @@ class HomePageView(TemplateView):
 
 class CompilerPageView(TemplateView):
     template_name = "compiler.html"
+
+
+class LearnPageView(TemplateView):
+    template_name = "learn.html"

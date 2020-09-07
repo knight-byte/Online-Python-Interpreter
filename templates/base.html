@@ -14,8 +14,10 @@
 			<!-- Navigation -->
 			<div class="nav">
 				<div class="nav-left">
-					<img src="{% static 'images/newlogo.jpg' %}" alt="logo">
+					<a href="{% url 'home' %}" ><img src="{% static 'images/newlogo.jpg' %}" alt="logo"></a>
+					
 					<a href="{% url 'home' %}" >HOME</a>
+					<a href="{% url 'learn' %}">LEARN</a>
 					<a href="{% url 'compile' %}">COMPILE</a>
 				</div>
 				<div class="nav-right">
