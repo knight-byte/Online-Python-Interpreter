@@ -2,17 +2,34 @@
 
 ```
 python >= 3.6.9
-Django ==2.1
 Virtualenv
-
 ```
 
-if all the above requirements are fullfilled
+If all the above requirements are fullfilled
 
+## Run local server
 
-## Runserver
-
+Activating/Running Virtual Environment
 ```
-source bin/activate
+#linux 
+source bin/activate 
+
+#windows
+.\Scripts\activate
+```
+
+Installing all dependencies
+```
+pip install -r requirements.txt 
+```
+
+Sync and Running the local server
+```
+python manage.py migrate
 python manage.py runserver
+```
+
+Deactivating the Virtual Environment
+```
+Deactivate
 ```
