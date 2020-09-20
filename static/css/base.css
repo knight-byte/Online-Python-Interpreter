@@ -13,7 +13,7 @@ justify-content: space-between;
 
 .nav a{
 text-decoration: none;
-font-size: 27px;
+font-size: 25px;
 padding: 15px 15px 0px 15px;
 font-family: 'Orbitron', sans-serif;
 }
@@ -48,6 +48,13 @@ border: 3px solid rgb(79, 4, 255);
 border-radius: 20px;
 margin-right: 20px; 
 }
+.userLogin p{
+	font-size: 20px;
+/*padding: 0px 0px 0px 0px;*/
+padding-right: 20px;
+margin:12px 3px 12px 3px;;
+font-family: 'Orbitron', sans-serif;
+}
 
 .login:hover{
 	background:  rgb(111, 59, 231);
@@ -58,7 +65,8 @@ color: white;
 
 
 .myacc{
-padding: 6px 10px 6px 10px;
+padding: 5px 8px 5px 8px;
+
 border: 3px solid  rgb(79, 4, 255);
 border-radius: 20px;
 background:  rgb(111, 59, 231);
