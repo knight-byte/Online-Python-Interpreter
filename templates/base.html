@@ -5,6 +5,7 @@
 		<title>Python Compiler</title>
 		<link href="{% static 'css/base.css' %}" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+		<link rel="icon" href="{% static 'images/newlogo.jpg' %}" type="image/icon type">
 		{% block headcontent %}
 		{% endblock headcontent %}
 	</head>
@@ -21,12 +22,21 @@
 					<a href="{% url 'compile' %}">COMPILE</a>
 				</div>
 				<div class="nav-right">
-					<div class="login">
-						<a href="">Login</a>
-					</div>
-					<div class="myacc">
-						<a href="">Sign up</a>
-					</div>
+					{% if user.is_authenticated %}
+						<div class="userLogin">
+							<p>Hi {{ user.username }}!</p>
+						</div>
+						<div class="myacc">
+							<a href="">Log Out</a>
+						</div>
+					{% else %}
+						<div class="login">
+							<a href="">Login</a>
+						</div>
+						<div class="myacc">
+							<a href="">Sign up</a>
+						</div>
+					{% endif %}
 				</div>
 				
 			</div>
