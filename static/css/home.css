@@ -1,51 +1,49 @@
-
-.downbox{
+.downbox {
   margin-top: 20px;
-display: grid;
-grid-template-columns: 1fr 1fr;
-justify-content: space-evenly;
-padding-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-evenly;
+  padding-top: 50px;
 }
 
-.textcon{
-font-family: 'Montserrat', sans-serif;
-border: 1px solid transparent;
-padding: 20px 50px 50px 100px;
+.textcon {
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid transparent;
+  padding: 20px 50px 50px 100px;
 
-margin: 20px;
-text-align: center;
-font-size: 28px;  
+  margin: 20px;
+  text-align: center;
+  font-size: 28px;
 }
 
-.getstart{
-text-align: center;
+.getstart {
+  text-align: center;
 }
 
-.getstart a{
-font-size: 20px;
-font-family: 'Montserrat', sans-serif;
-color:white;
-text-decoration: none;
-padding: 6px 10px 6px 10px;
-border: 3px solid  rgb(79, 4, 255);
-border-radius: 20px;
-background:  rgb(79, 4, 255);
+.getstart a {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px 6px 10px;
+  border: 3px solid rgb(79, 4, 255);
+  border-radius: 20px;
+  background: rgb(79, 4, 255);
 }
 
-.getstart a:hover{
-color: rgb(79, 4, 255);
-background: transparent;
-padding: 11px 15px 11px 15px;
+.getstart a:hover {
+  color: rgb(79, 4, 255);
+  background: transparent;
+  padding: 11px 15px 11px 15px;
 }
 
-.normal{
-font-weight: lighter;
-
+.normal {
+  font-weight: lighter;
 }
-.right-box h1{
-font-size: 60px;
-font-family: 'Montserrat', sans-serif;
-text-align: center;
+.right-box h1 {
+  font-size: 60px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 .slides {
   display: none;
@@ -54,19 +52,23 @@ img {
   vertical-align: middle;
 }
 
-.slideshow-container {
+.slideshow-Container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-.fade {
+.slide-fade {
   animation-name: faded;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+  animation-timing-function: linear;
 }
 
 @keyframes faded {
-  from {opacity: .2} 
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }

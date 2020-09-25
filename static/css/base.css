@@ -1,94 +1,99 @@
-.container{
+/* .container{
 display: flex;
 /*padding-bottom:0px;
  */
- /*margin: 0px;*/
+/*margin: 0px;
  padding: 0px;
+} */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
 }
 
-.nav{
-display: flex;
-justify-content: space-between;
+.nav a {
+  text-decoration: none;
+  font-size: 25px;
+  padding: 15px 15px 0px 15px;
+  font-family: "Orbitron", sans-serif;
 }
 
-.nav a{
-text-decoration: none;
-font-size: 25px;
-padding: 15px 15px 0px 15px;
-font-family: 'Orbitron', sans-serif;
+.nav-right,
+.nav-left {
+  padding: 30px 30px 0px 30px;
+}
+.nav-right {
+  display: flex;
+  padding-left: 50px;
 }
 
-.nav-right,.nav-left{
-padding: 30px 30px 0px 30px;
-
+.nav-left a:hover {
+  text-decoration: underline;
 }
-.nav-right{
-display: flex;
-padding-left: 50px;
+.nav-left a:visited {
+  color: rgb(111, 59, 231);
 }
 
-.nav-left a:hover{
-text-decoration: underline;
+.nav-left img {
+  width: 60px;
+  height: 50px;
+  padding-right: 20px;
 }
-.nav-left a:visited{
-	color: rgb(111, 59, 231);
+.nav-left a {
+  padding-left: 30px;
 }
-
-.nav-left img{
-	width: 60px;
-	height: 50px;
-	padding-right: 20px;
+.login {
+  padding: 6px 10px 6px 10px;
+  border: 3px solid rgb(79, 4, 255);
+  border-radius: 20px;
+  margin-right: 20px;
 }
-.nav-left a{
-	padding-left: 30px;
-}
-.login{
-padding: 6px 10px 6px 10px;
-border: 3px solid rgb(79, 4, 255);
-border-radius: 20px;
-margin-right: 20px; 
-}
-.userLogin p{
-	font-size: 20px;
-/*padding: 0px 0px 0px 0px;*/
-padding-right: 20px;
-margin:12px 3px 12px 3px;;
-font-family: 'Orbitron', sans-serif;
+.userLogin p {
+  font-size: 20px;
+  /*padding: 0px 0px 0px 0px;*/
+  padding-right: 20px;
+  margin: 12px 3px 12px 3px;
+  font-family: "Orbitron", sans-serif;
 }
 
-.login:hover{
-	background:  rgb(111, 59, 231);
+.login:hover {
+  background: rgb(111, 59, 231);
 }
-.login a:hover{
-color: white;
-}
-
-
-.myacc{
-padding: 5px 8px 5px 8px;
-
-border: 3px solid  rgb(79, 4, 255);
-border-radius: 20px;
-background:  rgb(111, 59, 231);
-}
-.myacc a{
-color:white;
+.login a:hover {
+  color: white;
 }
 
-.myacc:hover{
-background: white;
+.myacc {
+  padding: 5px 8px 5px 8px;
+
+  border: 3px solid rgb(79, 4, 255);
+  border-radius: 20px;
+  background: rgb(111, 59, 231);
+}
+.myacc a {
+  color: white;
 }
 
-.myacc a:hover{
-color:grey;
+.myacc:hover {
+  background: white;
+}
+
+.myacc a:hover {
+  color: grey;
 }
 
 .site-footer {
-border-top: 1px solid #ccc;
-padding-top: 80px;
- }
+  padding: 5px 0px 5px 0px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
 
-.site-footer .bottom-footer {
+/*.site-footer .bottom-footer {
 background-color: #4a4c4e;
 text-align: center;
 
@@ -96,10 +101,10 @@ padding: 20px 30px 30px 30px;
 font-size: 14px;
 justify-content: center;
 text-align: center;
-font-size: 0.875em; 
+font-size: 0.875em;
 }
 
 .site-footer .colophon {
 color: #898b8d;
 text-align: center;
-}
+}*/
