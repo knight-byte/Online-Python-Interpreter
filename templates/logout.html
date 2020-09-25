@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block headcontent %}
+<link href="{% static 'css/register.css' %}" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+{% endblock headcontent %}
+{% block content %}
+<div class="container">
+  <div class="row shad">
+
+    <div class="form-container col-6">
+      <h2>You have been Logged Out</h2>
+      <div class="#">
+        <h4><br><em>
+            <a href="{% url 'login' %}">Login Again</a>
+          </em>
+        </h4>
+      </div>
+    </div>
+    <div class="side-image col-6">
+      <img src="{% static 'images/register2.png' %}" style="width:100%">
+    </div>
+  </div>
+
+</div>
+
+{% endblock content %}

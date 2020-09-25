@@ -1,56 +1,71 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Python Compiler</title>
-		<link href="{% static 'css/base.css' %}" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-		<link rel="icon" href="{% static 'images/newlogo.jpg' %}" type="image/icon type">
-		{% block headcontent %}
-		{% endblock headcontent %}
-	</head>
-	<body>
-		<!-- main container-->
-		<div clas="container">
-			<!-- Navigation -->
-			<div class="nav">
-				<div class="nav-left">
-					<a href="{% url 'home' %}" ><img src="{% static 'images/newlogo.jpg' %}" alt="logo"></a>
-					
-					<a href="{% url 'home' %}" >HOME</a>
-					<a href="{% url 'learn' %}">LEARN</a>
-					<a href="{% url 'compile' %}">COMPILE</a>
-				</div>
-				<div class="nav-right">
-					{% if user.is_authenticated %}
-						<div class="userLogin">
-							<p>Hi {{ user.username }}!</p>
-						</div>
-						<div class="myacc">
-							<a href="">Log Out</a>
-						</div>
-					{% else %}
-						<div class="login">
-							<a href="">Login</a>
-						</div>
-						<div class="myacc">
-							<a href="">Sign up</a>
-						</div>
-					{% endif %}
-				</div>
-				
+
+<head>
+	<title>Python Compiler</title>
+	<link href="{% static 'css/base.css' %}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+	<link rel="icon" href="{% static 'images/newlogo.jpg' %}" type="image/icon type">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	{% block headcontent %}
+	{% endblock headcontent %}
+</head>
+
+<body>
+	<!-- main container-->
+	<div clas="container">
+		<!-- Navigation -->
+		<div class="nav">
+			<div class="nav-left">
+				<a href="{% url 'home' %}"><img src="{% static 'images/newlogo.jpg' %}" alt="logo"></a>
+
+				<a href="{% url 'home' %}">HOME</a>
+				<a href="{% url 'learn' %}">LEARN</a>
+				<a href="{% url 'compile' %}">COMPILE</a>
 			</div>
-			{% block content %}
-			{% endblock content %}
-		</div>
-		
-		<div class="site-footer">
-			<div class="bottom-footer">
-				
-				<div class="colophon">	 &copy 2020 A-B ONLINE PYTHON COMPILER  All rights reserved.</div>
-				
+			<div class="nav-right">
+				{% if user.is_authenticated %}
+				<div class="userLogin">
+					<a href="{% url 'profile' %}">
+						Hi {{ user.username }} !
+					</a>
+				</div>
+				<div class="myacc">
+					<a href="{% url 'logout' %}">Log Out</a>
+				</div>
+				{% else %}
+				<div class="login">
+					<a href="{% url 'login' %}">Login</a>
+				</div>
+				<div class="myacc">
+					<a href="{% url 'register' %}">Sign up</a>
+				</div>
+				{% endif %}
 			</div>
-			
+
 		</div>
-	</body>
+		{% if messages %}
+		{% for message in messages %}
+		<div class="alert alert-success"> {{ message }} </div>
+		{% endfor %}
+		{% endif %}
+		{% block content %}
+		{% endblock content %}
+	</div>
+
+
+	<div class="site-footer">
+		<div> Made with ❤ in India</div>
+	</div>
+	<script src="{% static 'js/homeSlide.js' %}"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
 </html>

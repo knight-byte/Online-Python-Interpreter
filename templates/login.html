@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block headcontent %}
+<link href="{% static 'css/register.css' %}" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+{% endblock headcontent %}
+{% block content %}
+<div class="container">
+  <div class="row shad">
+
+    <div class="form-container col-6">
+      <form method="POST">
+        {% csrf_token %}
+        <h1 class="display-4">Log In</h1>
+        {{ form|crispy }}
+        <div class="form-group">
+          <button type="submit" class="btn btn-lg btn-primary">LogIn</button>
+        </div>
+      </form>
+      <div class="#">
+        <h4><br><em>Need an Account?
+            <a href="{% url 'register' %}">Sign Up Now</a>
+          </em>
+        </h4>
+      </div>
+    </div>
+    <div class="side-image col-6">
+      <img src="{% static 'images/register2.png' %}" style="width:100%">
+    </div>
+  </div>
+
+</div>
+
+{% endblock content %}
