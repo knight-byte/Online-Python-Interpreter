@@ -1,0 +1,72 @@
+.side-image {
+  /* max-width: 500px; */
+  position: relative;
+  padding-top: 70px;
+}
+.shad {
+  max-width: 700px;
+  margin-top: 30px;
+  padding: 40px 80px 40px 80px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  align-items: center;
+}
+
+.r-circle {
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+}
+
+#div_id_images div {
+  display: none;
+}
+
+.inpLabel {
+  padding: 10px 40px;
+  border: 3px solid rgb(0, 98, 204);
+  border-radius: 48px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: rgb(0, 98, 204);
+}
+
+.inpLabel:hover {
+  transform: scale(1.04);
+}
+
+.inpLabel:active {
+  background: rgb(0, 98, 204);
+  color: white;
+}
+
+.inpLabel span {
+  font-weight: bold;
+}
+
+.requiredField {
+  font-family: "Orbitron", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.userdet {
+  padding-top: 40px;
+  font-family: "Kaushan Script", cursive;
+}
+.account-heading {
+  font-size: 40px;
+}
+
+.text-secondary {
+  font-size: 18px;
+}
+
+.text-muted {
+  display: none;
+}
+.form-group {
+  padding: 10px 50px 10px 50px;
+  /* margin: 50px; */
+}
