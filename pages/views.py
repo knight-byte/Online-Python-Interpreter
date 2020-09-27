@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib import messages
 from .models import Post
-from .forms import UserRegisterform
+from .forms import UserRegisterform, UserUpdateform, ProfileUpdateform
 
 
 def HomePageView(response):
@@ -39,4 +39,23 @@ def Register(request):
 
 @login_required
 def Profile(request):
-    return render(request, 'profile.html')
+    if request.method == 'POST':
+        u_form = UserUpdateform(request.POST, instance=request.user)
+        p_form = ProfileUpdateform(
+            request.POST,
+            request.FILES,
+            instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(
+                request, f'Your Account has been Updated!')
+            return redirect('profile')
+    else:
+        u_form = UserUpdateform(instance=request.user)
+        p_form = ProfileUpdateform(instance=request.user.profile)
+    context = {
+        'u_form': u_form,
+        'p_form': p_form,
+    }
+    return render(request, 'profile.html', context)
