@@ -2,16 +2,40 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block headcontent %}
-<link href="{% static 'css/register.css' %}" rel="stylesheet" />
+<link href="{% static 'css/profile.css' %}" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 {% endblock headcontent %}
 {% block content %}
-<div class="container">
-  <div class="row shad">
-    <!-- <h1>{{ user.username }}</h1> -->
-    <h1>Work in progress</h1>
-  </div>
+<div class="container shad">
+  <!-- <div class="shad"> -->
+  <!-- <h1>{{ user.username }}</h1> -->
+  <div class="content-section">
+    <div class="media">
+      <img alt="profile" class="r-circle" src="{{ user.profile.images.url }}">
 
+
+      <div class="media-body userdet">
+        <h2 class="account-heading">{{ user.username }}</h2>
+        <p class="text-secondary">{{ user.email }}</p>
+      </div>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h1 class="display-4">Profile Info</h1>
+      {{ u_form|crispy }}
+      {{ p_form|crispy }}
+
+      <input type="file" name="images" accept="image/*" class="clearablefileinput form-control-file " id="id_images" hidden>
+      <label for="id_images" id="selector" class="inpLabel">Select File</label>
+      <!-- <input type="file" name="images" accept="image/*" class="clearablefileinput form-control-file" id="id_images"> -->
+      <div class="form-group" align=right>
+        <button type="submit" class="btn btn-lg btn-primary">Update</button>
+      </div>
+    </form>
+    <!-- </div> -->
+  </div>
 </div>
+<!-- <script src="{% static 'js/UploadImageText.js' %}"></script> -->
 
 {% endblock content %}
