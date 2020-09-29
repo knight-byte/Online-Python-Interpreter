@@ -12,8 +12,23 @@
     <div class="form-container col-6">
       <form method="POST">
         {% csrf_token %}
-        <h1 class="display-4">Log In</h1>
-        {{ form|crispy }}
+        <h1 class="display-4 headreg">Log In</h1>
+        <!-- {{ form|crispy }} -->
+
+        <div class="input-class">
+          <div class="inp-block">
+            <img src="{% static 'images/UiIcon/004-add-user-1.png' %}" alt="user" class="icon usericon">
+            <input class="txtb" type="text" name="username" placeholder="UserName" required="" id="id_username" />
+          </div>
+
+
+          <div class="inp-block">
+            <img src="{% static 'images/UiIcon/005-key-1.png' %}" alt="user" class="icon">
+            <input class="txtb" type="password" name="password" placeholder="Password Confirmation" required="" id="id_password" />
+            <img src="{% static 'images/UiIcon/010-hide.png' %}" alt="user" class="pass" onclick="passwordvisible3()" id="pass3">
+          </div>
+
+        </div>
         <div class="form-group">
           <button type="submit" class="btn btn-lg btn-primary">LogIn</button>
         </div>

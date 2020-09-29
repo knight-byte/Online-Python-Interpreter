@@ -13,9 +13,39 @@
       <form method="POST">
         {% csrf_token %}
         <h1 class="display-4 headreg">Register</h1>
-        {{ form|crispy }}
+        <!-- {{ form|crispy}} -->
+        <!-- <img src="{% static 'images/UiIcon/004-add-user-1.png' %}" alt="user" class="icon usericon">
+        <img src="{% static 'images/UiIcon/006-email-1.png' %}" alt="user" class="icon email-icon"> -->
+
+
+
+        <div class="input-class">
+          <div class="inp-block">
+            <img src="{% static 'images/UiIcon/004-add-user-1.png' %}" alt="user" class="icon usericon">
+            <input class="txtb" type="text" name="username" placeholder="UserName" required="" id="id_username" />
+          </div>
+
+          <div class="inp-block">
+            <img src="{% static 'images/UiIcon/006-email-1.png' %}" alt="user" class="icon">
+            <input class="txtb" type="email" name="email" placeholder="Email" required="" id="id_email" />
+          </div>
+
+          <div class="inp-block">
+            <img src="{% static 'images/UiIcon/005-key-1.png' %}" alt="user" class="icon">
+            <input class="txtb" type="password" name="password1" placeholder="Password" required="" id="id_password1" />
+            <img src="{% static 'images/UiIcon/010-hide.png' %}" alt="user" class="pass" onclick="passwordvisible1()" id="pass1">
+          </div>
+
+          <div class="inp-block">
+            <img src="{% static 'images/UiIcon/005-key-1.png' %}" alt="user" class="icon">
+            <input class="txtb" type="password" name="password2" placeholder="Password Confirmation" required="" id="id_password2" />
+            <img src="{% static 'images/UiIcon/010-hide.png' %}" alt="user" class="pass" onclick="passwordvisible2()" id="pass2">
+          </div>
+
+        </div>
+
         <div class="form-group">
-          <button type="submit" class="btn btn-lg btn-primary">Signup</button>
+          <button type="submit" class="btn btn-lg btn-primary" onclick="passwordCheck()">Signup</button>
         </div>
       </form>
       <div class="#">
@@ -25,6 +55,23 @@
         </h4>
       </div>
     </div>
+    <!-- <div id="login-box">
+    <div class="left-box">
+      <h1>Register</h1>
+      <form action="#" method="POST">
+        {% csrf_token %}
+
+        <input class="txtb" type="text" name="username" placeholder="Name" required="" id="id_username" />
+        <input class="txtb" type="email" name="email" placeholder="Email" required="" id="id_email" />
+        <input class="txtb" type="password" name="password1" placeholder="Password" required="" id="id_password1" />
+        <input class="txtb" type="password" name="password2" placeholder="Password" required="" id="id_password2" />
+        <input type="submit" value="Sign Up" name="signup-button" class="signup-btn">
+      </form>
+      <small class="text-muted ">Already Have An Account?<a href="#">Login</a></small>
+    </div>
+    <div class="right-box">
+    </div>
+  </div> -->
     <div class="side-image col-6">
       <img src="{% static 'images/register2.png' %}" style="width:100%">
     </div>

@@ -1,20 +1,78 @@
-{% extends 'base.html' %}
-{% block content %}
-	{% for post in Post %}
-		<div class="post-entry">
-			<h2>Q.  <code>{{ post.title }}</code></h2>
-			<code>
-			<h4>solution : </h4>
-			{% if user.is_authenticated %}
-				{# <p>Hi {{ user.username }}!</p> #}
-			<pre>{{ post.body}}</pre>
-			
-			
-		{% else %}
-			<p>You are not logged in.</p>
-			<a href="{% url 'login' %}">Log In</a>
-		{% endif %}
-		</code>
+{% extends 'base.html' %} {% load static %} {% block headcontent %}
+<link href="{% static 'css/learn.css' %}" rel="stylesheet" />
+{% endblock headcontent %} {% block content %}
+
+
+<div class="container">
+	<div class="boxes">
+		<div class="cards-list">
+
+			<div class="card 3">
+
+				<div class="card_image">
+					<img class="static-img" src="{% static 'images/learnImg/computer.png' %}" />
+					<img src="{% static 'images/learnImg/computer.gif' %}" />
+				</div>
+				<div class="card_title">
+					<p>Card Title</p>
+				</div>
+			</div>
+			<div class="card 3">
+				<div class="card_image">
+					<img class="static-img" src="{% static 'images/learnImg/person-sit.png' %}" />
+					<img src="{% static 'images/learnImg/person-sit.gif' %}" />
+				</div>
+				<div class="card_title">
+					<p>Card Title</p>
+				</div>
+			</div>
+			<div class="card 3">
+				<div class="card_image">
+					<img class="static-img" src="{% static 'images/learnImg/typing.png' %}" />
+					<img src="{% static 'images/learnImg/typing.gif' %}" />
+				</div>
+				<div class="card_title">
+					<p>Card Title</p>
+				</div>
+			</div>
+			<div class="cards-list">
+
+				<div class="card 3">
+					<div class="card_image">
+						<img class="static-img" src="{% static 'images/learnImg/typewriter.png' %}" />
+						<img src="{% static 'images/learnImg/typewriter.gif' %}" />
+					</div>
+					<div class="card_title">
+						<p>Card Title</p>
+					</div>
+				</div>
+				<div class="card 3">
+					<div class="card_image">
+						<img class="static-img" src="{% static 'images/learnImg/night-type.png' %}" />
+						<img src="{% static 'images/learnImg/night-type.gif' %}" />
+					</div>
+					<div class="card_title">
+						<p>Card Title</p>
+					</div>
+				</div>
+				<div class="card 3">
+					<div class="card_image">
+						<img class="static-img" src="{% static 'images/learnImg/isometric-computer.png' %}" />
+						<img src="{% static 'images/learnImg/isometric-computer.gif' %}" />
+					</div>
+					<div class="card_title">
+						<p>Card Title</p>
+					</div>
+				</div>
+
+				<!-- <div class="cbox3 com-box"></div> -->
+			</div>
+			<!-- <div class="row2-cbox">
+			<div class="cbox4 com-box"></div>
+			<div class="cbox5 com-box"></div>
+			<div class="cbox6 com-box"></div>
+		</div> -->
+		</div>
 	</div>
-{% endfor %}
-{% endblock content %}
+
+	{% endblock content %}
