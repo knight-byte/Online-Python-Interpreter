@@ -6,45 +6,46 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
 {% endblock headcontent %}
 {% block content %}
-<div class="container">
-  <div class="row shad">
+<div class="backg">
+  <div class="container ">
+    <div class="row shad login-shad">
 
-    <div class="form-container col-6">
-      <form method="POST">
-        {% csrf_token %}
-        <h1 class="display-4 headreg">Log In</h1>
-        <!-- {{ form|crispy }} -->
+      <div class="form-container col-6">
+        <form method="POST">
+          {% csrf_token %}
+          <h1 class="display-4 headreg">Log In</h1>
+          <!-- {{ form|crispy }} -->
 
-        <div class="input-class">
-          <div class="inp-block">
-            <img src="{% static 'images/UiIcon/004-add-user-1.png' %}" alt="user" class="icon usericon">
-            <input class="txtb" type="text" name="username" placeholder="UserName" required="" id="id_username" />
+          <div class="input-class">
+            <div class="inp-block">
+              <img src="{% static 'images/UiIcon/004-add-user-1.png' %}" alt="user" class="icon usericon">
+              <input class="txtb" type="text" name="username" placeholder="UserName" required="" id="id_username" />
+            </div>
+
+
+            <div class="inp-block">
+              <img src="{% static 'images/UiIcon/005-key-1.png' %}" alt="user" class="icon">
+              <input class="txtb" type="password" name="password" placeholder="Password" required="" id="id_password" />
+              <img src="{% static 'images/UiIcon/010-hide.png' %}" alt="user" class="pass" onclick="passwordvisible3()" id="pass3">
+            </div>
+
           </div>
-
-
-          <div class="inp-block">
-            <img src="{% static 'images/UiIcon/005-key-1.png' %}" alt="user" class="icon">
-            <input class="txtb" type="password" name="password" placeholder="Password Confirmation" required="" id="id_password" />
-            <img src="{% static 'images/UiIcon/010-hide.png' %}" alt="user" class="pass" onclick="passwordvisible3()" id="pass3">
+          <div class="form-group">
+            <button type="submit" class="btn btn-lg btn-primary" style="margin-top:30px;">LogIn</button>
           </div>
-
+        </form>
+        <div class="#">
+          <h4><br><em>Need an Account?
+              <a href="{% url 'register' %}">Sign Up Now</a>
+            </em>
+          </h4>
         </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-lg btn-primary">LogIn</button>
-        </div>
-      </form>
-      <div class="#">
-        <h4><br><em>Need an Account?
-            <a href="{% url 'register' %}">Sign Up Now</a>
-          </em>
-        </h4>
+      </div>
+      <div class="side-image login-img col-6">
+        <img src="{% static 'images/loginPage.png' %}">
       </div>
     </div>
-    <div class="side-image col-6">
-      <img src="{% static 'images/register2.png' %}" style="width:100%">
-    </div>
+
   </div>
-
 </div>
-
 {% endblock content %}

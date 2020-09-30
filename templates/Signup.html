@@ -13,12 +13,12 @@
       <form method="POST">
         {% csrf_token %}
         <h1 class="display-4 headreg">Register</h1>
-        <!-- {{ form|crispy}} -->
+        {{ form|crispy }}
         <!-- <img src="{% static 'images/UiIcon/004-add-user-1.png' %}" alt="user" class="icon usericon">
         <img src="{% static 'images/UiIcon/006-email-1.png' %}" alt="user" class="icon email-icon"> -->
 
 
-
+        <!--
         <div class="input-class">
           <div class="inp-block">
             <img src="{% static 'images/UiIcon/004-add-user-1.png' %}" alt="user" class="icon usericon">
@@ -43,7 +43,7 @@
           </div>
 
         </div>
-
+-->
         <div class="form-group">
           <button type="submit" class="btn btn-lg btn-primary" onclick="passwordCheck()">Signup</button>
         </div>
