@@ -1,11 +1,23 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+)
 
 from django.contrib import messages
-from .models import Post
-from .forms import UserRegisterform, UserUpdateform, ProfileUpdateform
+from .models import BegPost, AdvPost
+from .forms import (
+    UserRegisterform,
+    UserUpdateform,
+    ProfileUpdateform,
+)
 
 
 def HomePageView(response):
@@ -17,10 +29,10 @@ def CompilerPageView(response):
 
 
 def LearnPageView(response):
-    content = {
-        'Post': Post.objects.all()
-    }
-    return render(response, 'learn.html', content)
+    # content = {
+    #     'Post': Post.objects.all()
+    # }
+    return render(response, 'learn.html')
 
 
 def Register(request):
@@ -60,3 +72,108 @@ def Profile(request):
         'p_form': p_form,
     }
     return render(request, 'profile.html', context)
+
+# Beginner Post View
+
+
+class BeginnerPostView(ListView):
+    model = BegPost
+    template_name = 'BeginnerPost.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
+
+# @login_required
+class BeginnerDetailView(LoginRequiredMixin, DetailView):
+    model = BegPost
+    template_name = 'beg-post-Detail.html'
+
+
+class BeginnerDeleteView(LoginRequiredMixin,  UserPassesTestMixin, DeleteView):
+    model = BegPost
+    template_name = 'beg-post-delete.html'
+    success_url = '/beginner'
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
+class BeginnerCreateView(LoginRequiredMixin, CreateView):
+    model = BegPost
+    fields = ['title', 'solution']
+    template_name = 'beg-post-create.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class BeginnerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = BegPost
+    fields = ['title', 'solution']
+    template_name = 'beg-post-create.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
+# Advance Post Vews
+class AdvancePostView(ListView):
+    model = AdvPost
+    template_name = 'AdvancePost.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
+
+# @login_required
+class AdvanceDetailView(LoginRequiredMixin, DetailView):
+    model = AdvPost
+    template_name = 'post-Detail.html'
+
+
+class AdvanceDeleteView(LoginRequiredMixin,  UserPassesTestMixin, DeleteView):
+    model = AdvPost
+    template_name = 'post-delete.html'
+    success_url = '/advance'
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
+class AdvanceCreateView(LoginRequiredMixin, CreateView):
+    model = AdvPost
+    fields = ['title', 'solution']
+    template_name = 'post-create.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class AdvanceUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = AdvPost
+    fields = ['title', 'solution']
+    template_name = 'post-create.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
