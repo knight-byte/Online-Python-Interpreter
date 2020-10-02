@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Post, Profile
+from .models import BegPost, AdvPost, Profile
 
-admin.site.register(Post)
+admin.site.register(BegPost)
+admin.site.register(AdvPost)
 admin.site.register(Profile)
