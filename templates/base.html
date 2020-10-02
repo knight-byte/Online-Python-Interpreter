@@ -34,14 +34,14 @@
 						Hi {{ user.username }} !
 					</a>
 				</div>
-				<div class="myacc">
+				<div class="signupBut">
 					<a href="{% url 'logout' %}">Log Out</a>
 				</div>
 				{% else %}
-				<div class="login">
+				<div class="loginBut">
 					<a href="{% url 'login' %}">Login</a>
 				</div>
-				<div class="myacc">
+				<div class="signupBut">
 					<a href="{% url 'register' %}">Sign up</a>
 				</div>
 				{% endif %}

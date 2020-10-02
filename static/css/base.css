@@ -48,38 +48,12 @@ display: flex;
   border-radius: 20px;
   margin-right: 20px;
 }
-.userLogin p {
+.userLogin {
   font-size: 20px;
   /*padding: 0px 0px 0px 0px;*/
-  padding-right: 20px;
-  margin: 12px 3px 12px 3px;
+  padding-right: 10px;
+  margin: 10px 3px 5px 3px;
   font-family: "Orbitron", sans-serif;
-}
-
-.login:hover {
-  background: rgb(111, 59, 231);
-}
-.login a:hover {
-  color: white;
-}
-
-.myacc {
-  padding: 5px 8px 5px 8px;
-
-  border: 3px solid rgb(79, 4, 255);
-  border-radius: 20px;
-  background: rgb(111, 59, 231);
-}
-.myacc a {
-  color: white;
-}
-
-.myacc:hover {
-  background: white;
-}
-
-.myacc a:hover {
-  color: grey;
 }
 
 .site-footer {
@@ -93,18 +67,50 @@ display: flex;
   text-align: center;
 }
 
-/*.site-footer .bottom-footer {
-background-color: #4a4c4e;
-text-align: center;
-
-padding: 20px 30px 30px 30px;
-font-size: 14px;
-justify-content: center;
-text-align: center;
-font-size: 0.875em;
+.signupBut {
+  text-align: right;
+  margin: auto;
 }
 
-.site-footer .colophon {
-color: #898b8d;
-text-align: center;
-}*/
+.signupBut a {
+  font-size: 20px;
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  text-decoration: none;
+  padding: 11px 15px 11px 15px;
+  border: 3px solid rgb(79, 4, 255);
+  border-radius: 20px;
+  background: rgb(79, 4, 255);
+}
+
+.signupBut a:hover {
+  color: rgb(79, 4, 255);
+  background: transparent;
+  text-decoration: none;
+}
+
+.loginBut {
+  text-align: right;
+  margin: auto;
+  margin-right: 20px;
+}
+
+.loginBut a {
+  font-size: 20px;
+  /* font-family: "Montserrat", sans-serif; */
+  color: rgb(79, 4, 255);
+  background: transparent;
+  font-family: "Orbitron", sans-serif;
+
+  text-decoration: none;
+  padding: 11px 15px 11px 15px;
+  border: 3px solid rgb(79, 4, 255);
+  border-radius: 20px;
+}
+
+.loginBut a:hover {
+  color: white;
+  background: rgb(79, 4, 255);
+  text-decoration: none;
+}
