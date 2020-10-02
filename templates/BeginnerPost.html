@@ -1,0 +1,36 @@
+{% extends 'post-Base.html' %}
+{% load static %}
+{% block Post-content %}
+{% for post in posts %}
+
+<article class="media content-section shad">
+  <div class="media-body">
+
+    <div class="article-metadata under-line">
+
+      <!-- <h1>{{ po.title }}</h1> -->
+      <img src="{{ post.author.profile.images.url }}" alt="UserProfile" class="rounded-circle article-img">
+
+      <a class="mr-2" href="#">{{ post.author }}</a>
+      <small class="text-muted"> {{ post.date_posted }}</small>
+    </div>
+    <p class="art-underline">Q. <a href="#" class="article-title ">{{ post.title }}</a></p>
+    <!-- <pre class="article-content">{{ po.solution }}</pre> -->
+
+    <div class="getstart">
+      <a href="{% url 'beg-post-detail' post.id %}">See Answer</a>
+    </div>
+
+  </div>
+</article>
+{% endfor %}
+
+
+{% endblock Post-content %}
+{% block side-content %}
+<a href="{% url 'profile' %}">PROFILE</a>
+<a href="{% url 'BegCreate' %}">CREATE NEW POST +</a>
+<a href="{% url 'home' %}">HOME</a>
+<a href="{% url 'learn' %}">LEARN PAGE</a>
+<a href="{% url 'compile' %}">COMPILER</a>
+{% endblock side-content %}
