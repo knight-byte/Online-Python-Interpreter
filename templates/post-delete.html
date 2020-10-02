@@ -1,0 +1,28 @@
+{% extends 'post-Base.html' %}
+{% load static %}
+{% block Post-content %}
+<div class="row shad">
+
+  <div class="form-container">
+    <form method="POST">
+      {% csrf_token %}
+      <h1 class="display-4 headreg">Are You Sure you Want to Delete "{{ object.title }}"</h1>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-outline-danger">Delete</button>
+        <a href="{% url 'adv-post-detail' object.id %}" class="btn btn-outline-secondary">Cancel</a>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+{% endblock Post-content %}
+{% block side-content %}
+<a href="{% url 'AdvPage' %}">VIEW ALL POST</a>
+<a href="{% url 'profile' %}">PROFILE</a>
+<a href="{% url 'AdvCreate' %}">CREATE NEW POST +</a>
+<a href="{% url 'home' %}">HOME</a>
+<a href="{% url 'learn' %}">LEARN PAGE</a>
+<a href="{% url 'compile' %}">COMPILER</a>
+{% endblock side-content %}
