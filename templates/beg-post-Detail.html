@@ -1,0 +1,42 @@
+{% extends 'post-Base.html' %}
+{% load static %}
+{% block Post-content %}
+<!-- Main content -->
+
+
+<article class="media content-section shad">
+  <div class="media-body">
+
+    <div class="article-metadata under-line">
+
+      <!-- <h1>{{ po.title }}</h1> -->
+      <img src="{{ object.author.profile.images.url }}" alt="UserProfile" class="rounded-circle article-img">
+
+      <a class="mr-2" href="#">{{ object.author }}</a>
+      <small class="text-muted"> {{ object.date_posted }}</small>
+    </div>
+    <p class="art-underline article-title">Q. {{ object.title }}</p>
+    <pre class="article-content">{{ object.solution }}</pre>
+
+  </div>
+</article>
+
+
+
+
+{% endblock Post-content %}
+
+
+
+{% block side-content %}
+<a href="{% url 'BegPage' %}">VIEW ALL POST</a>
+<a href="{% url 'profile' %}">PROFILE</a>
+<a href="{% url 'BegCreate' %}">CREATE NEW POST +</a>
+{% if object.author == user %}
+<a href="{% url 'beg-post-update' object.id %}">UPDATE POST</a>
+<a href="{% url 'beg-post-delete' object.id %}">DELETE POST - </a>
+{% endif %}
+<a href="{% url 'home' %}">HOME</a>
+<a href="{% url 'learn' %}">LEARN PAGE</a>
+<a href="{% url 'compile' %}">COMPILER</a>
+{% endblock side-content %}
