@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block headcontent %}
+<!-- All header links -->
+<link href="{% static 'css/advance.css' %}" rel="stylesheet" />
+
+{% endblock headcontent %}
+{% block content %}
+<!-- Main content -->
+<div class="container-fluid">
+  <div class="container size-container">
+    {% block Post-content %}
+
+    {% endblock Post-content %}
+
+  </div>
+  <div class="Side-box">
+    <h2 class="side-head"><a href="javascript: history.go(-1)"><img src="{% static 'images/UiIcon/back.png' %}" alt="Back" class="back-button"></a>Side Panel</h2>
+    <div class="side-content">
+
+      {% block side-content %}
+      <!-- Side content of different tab -->
+      {% endblock side-content %}
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock content %}
