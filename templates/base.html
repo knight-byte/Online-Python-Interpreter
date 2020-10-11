@@ -20,7 +20,7 @@
 	<!-- main container-->
 	<div clas="container">
 		<!-- Navigation -->
-		<div class="nav">
+		<div class="nav" id="hide-nav">
 			<div class="nav-left">
 				<a href="{% url 'home' %}"><img src="{% static 'images/newlogo.jpg' %}" alt="logo" style="width:70px; height:55px;"></a>
 
@@ -49,6 +49,21 @@
 			</div>
 
 		</div>
+		<div class="dropdown">
+			<button class="dropbtn">MENU</button>
+			<div class="dropdown-content">
+				<a href="{% url 'home' %}">HOME</a>
+				<a href="{% url 'learn' %}">LEARN</a>
+				<a href="{% url 'compile' %}">COMPILE</a>
+				{% if user.is_authenticated %}
+				<a href="{% url 'profile' %}">ACCOUNT</a>
+				<a href="{% url 'logout' %}">LOGOUT</a>
+				{% else %}
+				<a href="{% url 'login' %}">LOGIN</a>
+				<a href="{% url 'register' %}">SIGNUP</a>
+				{% endif %}
+			</div>
+		</div>
 		{% if messages %}
 		{% for message in messages %}
 		<div class="alert alert-success"> {{ message }} </div>
@@ -58,12 +73,14 @@
 		{% endblock content %}
 	</div>
 
-
-	<div class="site-footer">
-		<div> Made with ❤ in India</div>
+	<div class="space-footer">
+		<div class="site-footer">
+			<div> Made with ❤ in India</div>
+		</div>
 	</div>
 	<script src="{% static 'js/homeSlide.js' %}"></script>
 	<script src="{% static 'js/passwordvisible.js' %}"></script>
+	<script src="{% static 'js/base.js' %}"></script>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
