@@ -1,4 +1,4 @@
-#!/mnt/6E445ED4445E9F21/PythonData/Python-Compiler/bin/python
+#!/home/abunachar/Documents/DjangoProject/bin/python
 from django.core import management
 
 if __name__ == "__main__":

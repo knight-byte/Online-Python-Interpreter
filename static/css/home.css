@@ -13,13 +13,11 @@
 
   margin: 20px;
   text-align: center;
-  /* font-size: 28px; */
-  font-size: 1.8em;
+  font-size: 28px;
 }
 
 .getstart {
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .getstart a {
@@ -58,7 +56,6 @@ img {
   max-width: 1000px;
   position: relative;
   margin: auto;
-  max-height: 690px;
 }
 
 .slide-fade {
@@ -73,30 +70,5 @@ img {
   }
   to {
     opacity: 1;
-  }
-}
-
-@media (max-width: 1000px) {
-  .downbox {
-    display: block;
-    flex-direction: row;
-    margin: 10px;
-    padding: 5px;
-  }
-  .right-box {
-    width: 100%;
-    padding: 5px;
-  }
-  .textcon {
-    padding: 5px;
-    font-size: 1.2em;
-  }
-  .slideshow-Container {
-    position: relative;
-    /* margin: auto; */
-    padding-top: 10px;
-  }
-  .right-box h1 {
-    font-size: 3em;
   }
 }

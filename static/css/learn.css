@@ -83,11 +83,3 @@
   box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.2), 0 0px 1px 0 rgba(0, 0, 0, 0.19);
   background: white;
 }
-
-@media (max-width: 1000px) {
-  .card {
-    width: 250px;
-    height: 250px;
-    margin: 50px auto;
-  }
-}
