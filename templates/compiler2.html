@@ -1,0 +1,97 @@
+{% load static %}
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Compiler</title>
+  <link href="{% static 'css/compiler2.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="panel-div">
+    <div class="side-panel" id="side-m">
+      <!-- <img src="{% static 'images/UiIcon/001-menu.png' %}" alt="logo" class="hidden-menu"> -->
+
+      <!-- <h2 class="menu">Menu ajsdasndkldsfposfkgdfpgkdhpkp[gdh]</h2> -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="{% url 'home' %}" class="backk">HOME</a>
+      <a href="{% url 'learn' %}" class="backk">LEARN</a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'profile' %}" class="backk">PROFILE</a>
+
+      <a href="{% url 'logout' %}" class="backk">LOGOUT</a>
+      {% else %}
+      <a href="{% url 'login' %}" class="backk">LOGIN</a>
+
+      <a href="{% url 'register' %}" class="backk">SIGNUP</a>
+
+      {% endif %}
+    </div>
+
+    <div class="container-f" id="main">
+      <div class="top-panel">
+        <!-- <p>top panel</p> -->
+        <div class="menu-exp" onclick="openNav()">
+
+          <img src="{% static 'images/UiIcon/001-menu.png' %}" alt="logo" class="hidden-menu-img">
+          <h2 class="open-menu">Open Menu</h2>
+
+        </div>
+
+        <!-- <div class="run-save">
+
+          <div class="save-button">
+            <a href="">Save</a>
+          </div>
+          <div class="run-button">
+            <!-- <a href="">Run</a> -->
+            <!-- <input type="submit" class="run-button" value="Run">
+          </div>
+        </div>  -->
+      </div>
+      <!-- <hr class="line"> -->
+      <div class="main-container" onclick="closeNav()">  
+      </div>
+    </div>
+  </div>
+  <form method="POST">
+    <div class="grid-container">
+        {% csrf_token %}
+      <div class="coding-area">
+        <!-- <p>Coding Area</p> -->
+        {{ form.userCode }}
+      </div>
+      <div class="input-area">
+        <!-- <p>Input Area</p> -->
+        {{ form.customInput }}
+      </div>
+      <div class="output-area">
+        <p class="output-heading">Output</p>
+        <p> Output:     {{ output_data.output }} </p>
+        <p> Time(Sec):  {{ output_data.time }}</p>
+        <p> Memory(MB): {{ output_data.memory }}</p>
+        {% if output_data.error %}
+        <p> Error:      {{ output_data.error }}</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="btn-wrapper" style="display:block; margin: 0 auto;">
+      <input class="button" type="submit" value="Run">
+    </div>
+  </form>
+    
+  </div>
+  <!-- <div class="site-footer">
+    <div> Made with ❤ in India</div>
+  </div> -->
+
+  <script src="{% static 'js/compiler.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  
+
+</body>
+
+</html>

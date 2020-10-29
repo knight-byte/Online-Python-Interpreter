@@ -57,7 +57,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV '/mnt/6E445ED4445E9F21/PythonData/Python-Compiler'
+set -gx VIRTUAL_ENV '/home/abunachar/Documents/DjangoProject'
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | head -c 1) -lt 3

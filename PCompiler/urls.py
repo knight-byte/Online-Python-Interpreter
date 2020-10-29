@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
+from compiler import views as form_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name="login"),
     path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name="logout"),
     path('', include('pages.urls')),
+    #path('compiler-test/', form_view.get_name, name='compiler_form'),
+    path('compile/', form_view.get_code, name='compile')
 ]
