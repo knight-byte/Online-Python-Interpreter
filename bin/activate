@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='/home/abunachar/Documents/DjangoProject'
+VIRTUAL_ENV='/mnt/6E445ED4445E9F21/PythonData/Python-Compiler'
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
