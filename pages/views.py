@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
+from django_staff_required.views import StaffRequiredMixin
+from django.contrib.admin.views.decorators import staff_member_required
 from django.views.generic import (
     ListView,
     DetailView,
@@ -24,7 +26,7 @@ def HomePageView(response):
     return render(response, 'home.html')
 
 
-#def CompilerPageView(response):
+# def CompilerPageView(response):
 #    return render(response, 'compiler.html')
 
 
@@ -101,7 +103,7 @@ class BeginnerDeleteView(LoginRequiredMixin,  UserPassesTestMixin, DeleteView):
         return False
 
 
-class BeginnerCreateView(LoginRequiredMixin, CreateView):
+class BeginnerCreateView(LoginRequiredMixin, StaffRequiredMixin, CreateView):
     model = BegPost
     fields = ['title', 'solution']
     template_name = 'beg-post-create.html'
@@ -153,7 +155,7 @@ class AdvanceDeleteView(LoginRequiredMixin,  UserPassesTestMixin, DeleteView):
         return False
 
 
-class AdvanceCreateView(LoginRequiredMixin, CreateView):
+class AdvanceCreateView(LoginRequiredMixin, StaffRequiredMixin,  CreateView):
     model = AdvPost
     fields = ['title', 'solution']
     template_name = 'post-create.html'
