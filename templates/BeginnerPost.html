@@ -29,7 +29,9 @@
 {% endblock Post-content %}
 {% block side-content %}
 <a href="{% url 'profile' %}">PROFILE</a>
+{% if request.user.is_staff %}
 <a href="{% url 'BegCreate' %}">CREATE NEW POST +</a>
+{% endif %}
 <a href="{% url 'home' %}">HOME</a>
 <a href="{% url 'learn' %}">LEARN PAGE</a>
 <a href="{% url 'compile' %}">COMPILER</a>
