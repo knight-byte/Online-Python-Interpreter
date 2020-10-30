@@ -31,10 +31,12 @@
 {% block side-content %}
 <a href="{% url 'AdvPage' %}">VIEW ALL POST</a>
 <a href="{% url 'profile' %}">PROFILE</a>
+{% if request.user.is_staff %}
 <a href="{% url 'AdvCreate' %}">CREATE NEW POST +</a>
 {% if object.author == user %}
 <a href="{% url 'adv-post-update' object.id %}">UPDATE POST</a>
 <a href="{% url 'adv-post-delete' object.id %}">DELETE POST - </a>
+{% endif %}
 {% endif %}
 <a href="{% url 'home' %}">HOME</a>
 <a href="{% url 'learn' %}">LEARN PAGE</a>
