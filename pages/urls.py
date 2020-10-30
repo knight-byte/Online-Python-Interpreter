@@ -17,7 +17,7 @@ from . import views
 
 urlpatterns = [
     path('', views.HomePageView, name='home'),
-    path('compile/', views.CompilerPageView, name='compile'),
+    #path('compile/', views.CompilerPageView, name='compile'),
     path('learn/', views.LearnPageView, name='learn'),
     # path('login/', views.Register, name='register'),
     path('Signup/', views.Register, name='register'),

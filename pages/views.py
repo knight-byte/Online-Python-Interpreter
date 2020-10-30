@@ -24,8 +24,8 @@ def HomePageView(response):
     return render(response, 'home.html')
 
 
-def CompilerPageView(response):
-    return render(response, 'compiler.html')
+#def CompilerPageView(response):
+#    return render(response, 'compiler.html')
 
 
 def LearnPageView(response):

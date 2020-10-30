@@ -34,14 +34,15 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'pages.apps.PagesConfig',
+    'compiler.apps.CompilerConfig',
     'django.contrib.auth',
     'crispy_forms',
+    'rest_framework',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
-
 
 ]
 
