@@ -4,6 +4,7 @@ chardet==3.0.4
 dj-database-url==0.5.0
 Django==2.1
 django-crispy-forms==1.9.2
+django-staff-required==2020.7.1
 djangorestframework==3.12.1
 gunicorn==20.0.4
 idna==2.10
@@ -13,4 +14,3 @@ requests==2.24.0
 sqlparse==0.4.1
 urllib3==1.25.11
 whitenoise==5.2.0
-
