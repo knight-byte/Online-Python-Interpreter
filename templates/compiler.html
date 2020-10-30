@@ -12,10 +12,8 @@
 <body>
 
   <div class="panel-div">
+    <!--
     <div class="side-panel" id="side-m">
-      <!-- <img src="{% static 'images/UiIcon/001-menu.png' %}" alt="logo" class="hidden-menu"> -->
-
-      <!-- <h2 class="menu">Menu ajsdasndkldsfposfkgdfpgkdhpkp[gdh]</h2> -->
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
       <a href="{% url 'home' %}" class="backk">HOME</a>
       <a href="{% url 'learn' %}" class="backk">LEARN</a>
@@ -30,54 +28,83 @@
 
       {% endif %}
     </div>
+-->
+    <!-- <div class="nav">
+      <div class="nav-left">
+        <a href="{% url 'home' %}"><img src="{% static 'images/newlogo.jpg' %}" alt="logo" style="width:70px; height:55px;"></a>
 
-    <div class="container-f" id="main">
-      <div class="top-panel">
-        <!-- <p>top panel</p> -->
-        <div class="menu-exp" onclick="openNav()">
-
-          <img src="{% static 'images/UiIcon/001-menu.png' %}" alt="logo" class="hidden-menu-img">
-          <h2 class="open-menu">Open Menu</h2>
-
+        <a href="{% url 'home' %}">HOME</a>
+        <a href="{% url 'learn' %}">LEARN</a>
+        <a href="{% url 'compile' %}">COMPILE</a>
+      </div>
+      <div class="nav-right">
+        {% if user.is_authenticated %}
+        <div class="userLogin">
+          <a href="{% url 'profile' %}">
+            Hi {{ user.username }} !
+          </a>
         </div>
-
-        <div class="run-save">
-
-          <div class="save-button">
-            <a href="">Save</a>
-          </div>
-          <div class="run-button">
-            <a href="">Run</a>
-          </div>
+        <div class="signupBut">
+          <a href="{% url 'logout' %}">Log Out</a>
         </div>
+        {% else %}
+        <div class="loginBut">
+          <a href="{% url 'login' %}">Login</a>
+        </div>
+        <div class="signupBut">
+          <a href="{% url 'register' %}">Sign up</a>
+        </div>
+        {% endif %}
+      </div> -->
+
+  </div>
+  <div class="container-f" id="main">
+    <div class="top-panel">
+      <!-- <p>top panel</p> -->
+      <div class="menu-exp" onclick="openNav()">
+
+        <img src="{% static 'images/UiIcon/001-menu.png' %}" alt="logo" class="hidden-menu-img">
+        <h2 class="open-menu">Open Menu</h2>
+
       </div>
 
-      <div class="main-container" onclick="closeNav()">
+      <div class="run-save">
 
-        <div class="text-side">
-          <!-- Text area-->
-          <!-- <p>Side Panel</p> -->
-          <div class="form-group">
-            <label for="text"></label>
-            <textarea class="code-area" id="code-area" placeholder="Enter your code here"></textarea>
-          </div>
+        <div class="save-button">
+          <a href="">Save</a>
         </div>
-        <div class="ter-input">
-          <div class="input-side">
-            <!-- <p>Input</p> -->
-            <textarea class="custom-input" placeholder="Custom input goes here. Leave blank if no input is required."></textarea>
-          </div>
-          <div class="terminal-side">
-            <!-- <p>terminal</p> -->
-            
-          </div>
-
-
+        <div class="run-button">
+          <a href="">Run</a>
         </div>
-
       </div>
     </div>
+
+    <div class="main-container" onclick="closeNav()">
+
+      <div class="text-side">
+        <!-- Text area-->
+        <!-- <p>Side Panel</p> -->
+        <div class="form-group">
+          <label for="text"></label>
+          <textarea class="code-area" id="code-area" placeholder="Enter your code here"></textarea>
+        </div>
+      </div>
+      <div class="ter-input">
+        <div class="input-side">
+          <!-- <p>Input</p> -->
+          <textarea class="custom-input" placeholder="Custom input goes here. Leave blank if no input is required."></textarea>
+        </div>
+        <div class="terminal-side">
+          <!-- <p>terminal</p> -->
+
+        </div>
+
+
+      </div>
+
+    </div>
   </div>
+  <!-- </div> -->
 
   <div class="site-footer">
     <div> Made with ❤ in India</div>

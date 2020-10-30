@@ -6,60 +6,51 @@
   <meta charset="utf-8">
   <title>Compiler</title>
   <link href="{% static 'css/compiler2.css' %}" rel="stylesheet">
+  <!-- <link href="{% static 'css/base.css' %}" rel="stylesheet"> -->
+
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="panel-div">
-    <div class="side-panel" id="side-m">
-      <!-- <img src="{% static 'images/UiIcon/001-menu.png' %}" alt="logo" class="hidden-menu"> -->
+  <!-- <div class="panel-div"> -->
 
-      <!-- <h2 class="menu">Menu ajsdasndkldsfposfkgdfpgkdhpkp[gdh]</h2> -->
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-      <a href="{% url 'home' %}" class="backk">HOME</a>
-      <a href="{% url 'learn' %}" class="backk">LEARN</a>
-      {% if user.is_authenticated %}
-      <a href="{% url 'profile' %}" class="backk">PROFILE</a>
+  <div class="container-f" id="main">
+    <div class="nav">
+      <div class="nav-left">
+        <a href="{% url 'home' %}"><img src="{% static 'images/newlogo.jpg' %}" alt="logo" style="width:60px; height:55px;"></a>
 
-      <a href="{% url 'logout' %}" class="backk">LOGOUT</a>
-      {% else %}
-      <a href="{% url 'login' %}" class="backk">LOGIN</a>
-
-      <a href="{% url 'register' %}" class="backk">SIGNUP</a>
-
-      {% endif %}
-    </div>
-
-    <div class="container-f" id="main">
-      <div class="top-panel">
-        <!-- <p>top panel</p> -->
-        <div class="menu-exp" onclick="openNav()">
-
-          <img src="{% static 'images/UiIcon/001-menu.png' %}" alt="logo" class="hidden-menu-img">
-          <h2 class="open-menu">Open Menu</h2>
-
+        <a href="{% url 'home' %}">HOME</a>
+        <a href="{% url 'learn' %}">LEARN</a>
+        <a href="{% url 'compile' %}">COMPILE</a>
+      </div>
+      <div class="nav-right">
+        {% if user.is_authenticated %}
+        <div class="userLogin">
+          <a href="{% url 'profile' %}">
+            Hi {{ user.username }} !
+          </a>
         </div>
-
-        <!-- <div class="run-save">
-
-          <div class="save-button">
-            <a href="">Save</a>
-          </div>
-          <div class="run-button">
-            <!-- <a href="">Run</a> -->
-            <!-- <input type="submit" class="run-button" value="Run">
-          </div>
-        </div>  -->
+        <div class="signupBut">
+          <a href="{% url 'logout' %}">Log Out</a>
+        </div>
+        {% else %}
+        <div class="loginBut">
+          <a href="{% url 'login' %}">Login</a>
+        </div>
+        <div class="signupBut">
+          <a href="{% url 'register' %}">Sign up</a>
+        </div>
+        {% endif %}
       </div>
-      <!-- <hr class="line"> -->
-      <div class="main-container" onclick="closeNav()">  
-      </div>
+
     </div>
+    <!-- <hr class="line"> -->
   </div>
+  <!-- </div> -->
   <form method="POST">
     <div class="grid-container">
-        {% csrf_token %}
+      {% csrf_token %}
       <div class="coding-area">
         <!-- <p>Coding Area</p> -->
         {{ form.userCode }}
@@ -70,11 +61,11 @@
       </div>
       <div class="output-area">
         <p class="output-heading">Output</p>
-        <p> Output:     {{ output_data.output }} </p>
-        <p> Time(Sec):  {{ output_data.time }}</p>
+        <p> Output: {{ output_data.output }} </p>
+        <p> Time(Sec): {{ output_data.time }}</p>
         <p> Memory(MB): {{ output_data.memory }}</p>
         {% if output_data.error %}
-        <p> Error:      {{ output_data.error }}</p>
+        <p> Error: {{ output_data.error }}</p>
         {% endif %}
       </div>
     </div>
@@ -82,15 +73,15 @@
       <input class="button" type="submit" value="Run">
     </div>
   </form>
-    
-  </div>
+
+  <!-- </div> -->
   <!-- <div class="site-footer">
     <div> Made with ❤ in India</div>
   </div> -->
 
   <script src="{% static 'js/compiler.js' %}"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-  
+
 
 </body>
 
