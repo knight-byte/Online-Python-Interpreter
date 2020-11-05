@@ -15,7 +15,8 @@ Activating/Running Virtual Environment
 source bin/activate 
 
 #windows
-.\Scripts\activate
+source bin/activate
+
 ```
 
 Installing all dependencies
