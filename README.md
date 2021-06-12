@@ -11,6 +11,10 @@ If all the above requirements are fullfilled
 
 Activating/Running Virtual Environment
 ```
+$ git clone https://github.com/knight-byte/Python-Compiler
+$ cd Python-Compiler
+$ virtualenv .
+
 #linux 
 source bin/activate 
 
