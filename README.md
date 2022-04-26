@@ -11,7 +11,7 @@ If all the above requirements are fullfilled
 
 Activating/Running Virtual Environment
 ```
-$ git clone https://github.com/knight-byte/Python-Compiler
+$ git clone https://github.com/knight-byte/Online-Python-Interpreter.git
 $ cd Python-Compiler
 $ virtualenv .
 
